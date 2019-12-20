@@ -141,7 +141,7 @@ label{
 .qa_list
 {
     border: 1px dashed #0aa; 
-    width:60%;
+    width:fit-content;
     padding:8px;
     margin:5px;
     background-color:rgba(0, 170, 170, 0.219);
