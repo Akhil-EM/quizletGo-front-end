@@ -1,14 +1,14 @@
 {
   "name": "quizlet-go",
   "version": "0.0.0",
-  "scripts": {
+    "scripts": {
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build --output-path dist",
+    "postinstall": "npm run build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
