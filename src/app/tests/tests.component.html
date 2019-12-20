@@ -1,0 +1,93 @@
+
+<div class="container" style="margin:5px">
+    <div id='start-test' class="list" >
+        <table  class="tab">
+            <div style="padding:10px;">
+                <tr >
+                    <td width="55%" valign="top">
+                    <h3 class="heading1">Instruction:</h3>
+                    <ul>
+                    <li>Total number of questions: 20</li>
+                    <li>Time alloted: 20</li>
+                    <li>Each question carry 1 mark, no negative marks.</li>
+                    </ul>
+                    <input type="button" *ngIf='quiz_array && quiz_array.length' name="StartTest" value="Start Test" (click)="start_test( )"
+                    id="StartTest" class='btn btn-primary' style='margin-left: 15px;' /></td>
+                    <td valign="top">
+                    <h3  >Note:</h3>
+                    <ul>
+                    <li>Click the 'Submit Test' button given in the bottom of this page
+                    to Submit your answers.</li>
+                    <li>Test will be submitted automatically if the time expired.</li>
+                    <li>Don't refresh the page.</li>
+                    </ul>
+                    </td>
+                    </tr>
+            </div>
+        </table>
+        </div>
+        <!-- <div class="time" id="cnt-time"> <p>Time Left: <b><span id='duration' style="color:#3B88C3;">00:20:00</span></b> </p> </div> -->
+        <div id="exam" style="margin:10px; display:none;" >
+            <div class="row"  >
+                <div class="col-8" >
+                   <div>
+                       <div id="tab1" >
+                           <h3 class="heading1">Instructions to Solve</h3>
+                           <div class="instructions"><ul>
+                           <li>Total number of questions: 20</li>
+                           <li>Time allotted: 20 mins</li>
+                           <li>Each question carry 1 mark, no negative marks.</li>
+                           </ul>
+                           </div>
+                           <form name="OnlineTestForm" id="OnlineTestForm" (ngSubmit)="submit_test( )">
+                             
+                           <div class="qa_list" *ngFor="let i of quiz_array;index as in">
+                            {{i.id}}
+                           <p>{{i.id}}  {{i.question}}</p>
+                           <ul class="qa_sub_list">
+                            
+                           <li><input type="radio" 
+                           name="{{i.id}}"
+                           value="{{i.ans1}}"  /> A. {{i.ans1}}</li> 
+                           <li><input type="radio"
+                           name="{{i.id}}" 
+                           value="{{i.ans2}}" /> B. {{i.ans2}}</li> 
+                           <li><input type="radio"
+                           name="{{i.id}}" 
+                           value="{{i.ans3}}" /> C. {{i.ans3}}</li> 
+                           <li><input type="radio"
+                           name="{{i.id}}" 
+                           value="{{i.ans4}}" /> D. {{i.ans4}}</li> 
+                           </ul>
+                           </div>
+                           <div id='submit-test'>
+                             <button type="submit" class='btn btn-primary' name='Submit' id='Submit'  style="margin:10px"  >Submit Test</button>
+                          </div>
+                           </form>
+                           </div>      
+                  </div>
+                </div>
+                <div class="col-4" >
+                       <div id="inst"  >
+                       <h4 class="h4-head">Instructions</h4>
+                       <ul>
+                       <li>Click the 'Submit Test' button given in the bottom
+                           of this page to Submit your answers.</li>
+                       <li>Test will be submitted automatically if the time
+                           expired.</li>
+                       <li>Don't refresh the page.</li>
+                       </ul>
+                       </div>	
+           </div>
+               </div>
+        </div>
+        <br>
+        <div id="result" class="result" >
+            <h4 class="h4-head">Result</h4>
+            <ul>
+            <li *ngIf="mark > 0">Congrats !! you recived {{mark}} marks .</li>
+            <li *ngIf="mark ==0 "> You recived {{mark}} marks .
+                You must try hard to win !!</li>
+            </ul>
+            </div> 
+</div>

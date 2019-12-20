@@ -1,0 +1,12 @@
+<div class="datadiv">
+        <div class="card-content" *ngFor="let i of posts">
+            <p class="date-view">{{(i.date).substring(0,10)}}
+            </p>
+                    <p class="book-head">{{i.heading}} 
+                    </p>        
+                        <div>
+                            <p class="para-style">{{i.content}}                            
+                            </p>
+                        </div>
+        </div>
+</div>
